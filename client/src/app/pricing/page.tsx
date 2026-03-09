@@ -8,14 +8,14 @@ export default function PricingPage() {
 
             {/* Header */}
             <section className="relative pt-32 pb-20 overflow-hidden">
-                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-pink-50 to-transparent -z-10"></div>
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-linear-to-b from-pink-50 to-transparent -z-10"></div>
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-6">
                         Simple, Transparent <br />
                         <span className="gradient-text">Pricing Plans</span>
                     </h1>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-                        Choose the plan that's right for you. Whether you want to try it out or need a premium looking biodata, we have you covered.
+                        Choose the plan that&apos;s right for you. Whether you want to try it out or need a premium looking biodata, we have you covered.
                     </p>
                 </div>
             </section>

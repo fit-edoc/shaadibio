@@ -18,7 +18,7 @@ const Navbar = () => {
                             <Link href="/pricing" className="text-gray-600 hover:text-primary px-3 py-2 transition-colors">
                                 Pricing
                             </Link>
-                            <Link href="/about" className="text-gray-600 hover:text-primary px-3 py-2 transition-colors">
+                            <Link href="/how-it-works" className="text-gray-600 hover:text-primary px-3 py-2 transition-colors">
                                 How it works
                             </Link>
                         </div>
