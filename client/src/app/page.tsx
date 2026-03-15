@@ -3,21 +3,19 @@ import Heart from "@/icons/Heart";
 import Link from "next/link";
 
 export default function Home() {
-
-  console.log('Initial memory usage:', process.memoryUsage());
   return (
     <div className="min-h-screen bg-white">
       <Navbar />
-    <div className="absolute top-1/2">
-      <Heart/>
-    </div>
+      <div className="absolute top-1/2">
+        <Heart />
+      </div>
       {/* Hero Section */}
       <section className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[600px] bg-gradient-to-b from-pink-50 to-transparent -z-10"></div>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 mb-6">
             Create Your Perfect <br />
-            <span className="gradient-text">Marriage BioData</span>
+            <span className="gradient-text font-love">Marriage BioData</span>
           </h1>
           <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-10">
             Professional, beautiful, and easy to use. Choose from multiple traditional and modern templates. Download in high-quality PDF.

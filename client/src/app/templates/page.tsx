@@ -10,7 +10,7 @@ export default function TemplatesPage() {
             <main className="pt-32 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div className="text-center mb-16">
                     <h1 className="text-4xl md:text-5xl font-extrabold text-gray-900 mb-4">
-                        Our Premium <span className="gradient-text">Templates</span>
+                        Our Premium <span className="gradient-text font-love">Templates</span>
                     </h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                         Choose from a wide variety of professionally designed marriage biodata templates. Traditional, modern, and designer options.

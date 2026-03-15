@@ -3,7 +3,7 @@
 import { useBioData } from "@/hooks/useBioData";
 import { getTemplateById, TEMPLATES } from "@/templates";
 import Navbar from "@/components/layout/Navbar";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 export default function BuilderPage() {
     const {
@@ -17,16 +17,23 @@ export default function BuilderPage() {
     } = useBioData();
 
     const [activeTab, setActiveTab] = useState("personal");
+    const pdfRef = useRef<HTMLDivElement>(null);
+
+    const handleDownloadPDF = () => {
+        window.print();
+    };
 
     const SelectedTemplate = getTemplateById(data.templateId).component;
 
     return (
-        <div className="min-h-screen bg-gray-50">
-            <Navbar />
+        <div className="min-h-screen bg-gray-50 print:bg-white">
+            <div className="print:hidden">
+                <Navbar />
+            </div>
 
-            <div className="pt-20 px-4 h-screen flex flex-col md:flex-row gap-6">
+            <div className="pt-20 px-4 h-screen flex flex-col md:flex-row gap-6 print:pt-0 print:px-0 print:h-auto print:block">
                 {/* Left Side: Form Editor */}
-                <div className="w-full md:w-1/2 overflow-y-auto pb-10 pr-2 custom-scrollbar">
+                <div className="w-full md:w-1/2 overflow-y-auto pb-10 pr-2 custom-scrollbar print:hidden">
                     <div className="bg-white rounded-2xl shadow-sm border border-gray-100 p-6">
                         <h1 className="text-2xl font-bold text-gray-900 mb-6">Create Your BioData</h1>
 
@@ -117,14 +124,19 @@ export default function BuilderPage() {
 
                         <div className="mt-10 flex justify-between">
                             <button className="px-6 py-2 rounded-xl text-gray-600 font-medium">Reset</button>
-                            <button className="px-8 py-3 bg-primary text-white rounded-xl font-bold premium-shadow">Download PDF</button>
+                            <button
+                                onClick={handleDownloadPDF}
+                                className="px-8 py-3 bg-primary text-white rounded-xl font-bold premium-shadow"
+                            >
+                                Download PDF
+                            </button>
                         </div>
                     </div>
                 </div>
 
                 {/* Right Side: Real-time Preview */}
-                <div className="hidden md:block w-1/2 bg-gray-200 rounded-t-2xl p-8 overflow-y-auto pb-20 border-x border-t border-gray-300">
-                    <div className="sticky top-0 mb-4 flex justify-between items-center bg-white/80 backdrop-blur p-4 rounded-xl shadow-sm border border-white/50">
+                <div className="hidden md:block w-1/2 bg-gray-200 rounded-t-2xl p-8 overflow-y-auto pb-20 border-x border-t border-gray-300 print:w-full print:block print:bg-white print:p-0 print:border-none print:m-0 print:overflow-visible">
+                    <div className="sticky top-0 mb-4 flex justify-between items-center bg-white/80 backdrop-blur p-4 rounded-xl shadow-sm border border-white/50 print:hidden">
                         <span className="text-sm font-bold text-gray-500 uppercase tracking-widest">Live Preview</span>
                         <div className="flex space-x-2">
                             <div className="w-3 h-3 rounded-full bg-red-400"></div>
@@ -133,8 +145,10 @@ export default function BuilderPage() {
                         </div>
                     </div>
 
-                    <div className="transform scale-90 origin-top">
-                        <SelectedTemplate data={data} />
+                    <div className="transform scale-90 origin-top print:scale-100 print:transform-none">
+                        <div ref={pdfRef}>
+                            <SelectedTemplate data={data} />
+                        </div>
                     </div>
                 </div>
             </div>

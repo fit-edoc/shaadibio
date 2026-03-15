@@ -67,7 +67,7 @@ export default function HowItWorks() {
                     </span>
                     <h1 className="text-4xl md:text-6xl font-extrabold tracking-tight text-gray-900 mb-6">
                         Create Your Biodata in <br />
-                        <span className="gradient-text">3 Simple Steps</span>
+                        <span className="gradient-text font-love">3 Simple Steps</span>
                     </h1>
                     <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                         We&apos;ve simplified the process of creating a professional marriage biodata. No design skills needed.

@@ -3,10 +3,13 @@
 :root {
   --background: #ffffff;
   --foreground: #111827;
-  --primary: #be185d; /* Pink 700 */
+  --primary: #be185d;
+  /* Pink 700 */
   --primary-foreground: #ffffff;
-  --secondary: #fdf2f8; /* Pink 50 */
-  --accent: #db2777; /* Pink 600 */
+  --secondary: #fdf2f8;
+  /* Pink 50 */
+  --accent: #db2777;
+  /* Pink 600 */
   --border: #e5e7eb;
   --card: #ffffff;
   --card-foreground: #111827;
@@ -22,6 +25,7 @@
   --color-border: var(--border);
   --color-card: var(--card);
   --color-card-foreground: var(--card-foreground);
+  --font-love: var(--font-love);
 }
 
 body {
@@ -39,9 +43,23 @@ body {
 .gradient-text {
   background: linear-gradient(135deg, #be185d 0%, #db2777 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 .premium-shadow {
   box-shadow: 0 10px 30px -10px rgba(190, 24, 93, 0.2);
+}
+
+@media print {
+  @page {
+    margin: 0 !important;
+    size: auto;
+  }
+
+  body {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    background-color: white !important;
+  }
 }

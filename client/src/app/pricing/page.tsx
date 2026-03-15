@@ -12,7 +12,7 @@ export default function PricingPage() {
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center pt-8">
                     <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-gray-900 mb-6">
                         Simple, Transparent <br />
-                        <span className="gradient-text">Pricing Plans</span>
+                        <span className="gradient-text font-love">Pricing Plans</span>
                     </h1>
                     <p className="text-lg text-gray-600 max-w-2xl mx-auto">
                         Choose the plan that&apos;s right for you. Whether you want to try it out or need a premium looking biodata, we have you covered.
